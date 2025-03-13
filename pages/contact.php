@@ -30,5 +30,31 @@
             </div>
         </div>
     </div>
+
+    <div id="bodyContainer">
+        <div class="pakketContent">
+            <div class="pakketTxt">
+                <h1 class="title">Wie zijn wij?</h1>
+                <p class="pakketTekst">
+                We helpen je graag verder. <br><br>
+
+                Heb je vragen over onze hostingdiensten of ondersteuning nodig? We staan voor je klaar! Vul het formulier in of neem telefonisch contact met ons op.
+                </p>
+            </div>
+
+            <div id="contactContainer">
+                <div class="contactForm">
+                    <h1 class="title">Contactformulier</h1>
+                    <form action="" class="form">
+                        <input type="text" name="name" id="name" placeholder="Naam">
+                        <input type="email" name="email" id="email" placeholder="E-mailadres">
+                        <input type="text" name="subject" id="subject" placeholder="Onderwerp">
+                        <textarea name="message" id="message" placeholder="Bericht"></textarea>
+                        <input type="submit" name="versturen" id="submit" value="Versturen">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
