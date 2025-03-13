@@ -9,6 +9,7 @@ body{
     font-family: Oswald;
 }
 
+.navLoginBackground,
 .navBackground{
     width: 100%;
     height: min-content;
@@ -19,6 +20,10 @@ body{
     padding-top: 60px;
     padding-left: 100px;
     padding-right: 100px;
+}
+
+.navLoginBackground{
+    padding-bottom: 60px;
 }
 
 .logo{
