@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="contactContainer">
         <div class="contactForm">
             <h1 class="title">Contactformulier</h1>
@@ -59,7 +59,7 @@
             <h1 class="title">Direct contact</h1>
             <p class="pakketTekst">Liever telefonisch contact?</p>
             <p class="callUs"><img src="../images/phone.svg" alt="Phone" class="contactImg">Bel ons op +31 123 456 789</p>
-            <p class="pakketTekst">U kunt ons ook mailern op</p>
+            <p class="pakketTekst">U kunt ons ook mailen op</p>
             <p class="mailUs"><img src="../images/mail.svg" alt="Mail" class="contactImg">support@krashosting.nl</p>
             <p class="pakketTekst">Onze klantenservice is bereikbaar</p>
             <p class="contactUs"><img src="../images/klantenservice.svg" alt="Klantenservice" class="contactImg">van maandag t/m vrijdag, van 9:00 tot 17:00</p>
