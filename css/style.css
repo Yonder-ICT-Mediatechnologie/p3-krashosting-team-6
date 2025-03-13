@@ -151,18 +151,22 @@ p{
     gap: 10px;
 }
 
+.pakketEen,
 .pakketEasy{
     background-color: #9C65D5;
 }
 
+.pakketTwee,
 .pakketFunctionals{
     background-color: #60B4D4;
 }
 
+.pakketDrie,
 .pakketPro{
     background-color: #5BCA54;
 }
 
+.pakketVier,
 .pakketHeavy{
     background-color: #ED5E4B;
 }
@@ -266,3 +270,77 @@ p{
     padding-right: 300px;
     margin-bottom: 100px;
 }
+
+.pakketten{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -100px 100px 100px;
+    gap: 50px;
+}
+
+.pakketEen,
+.pakketTwee,
+.pakketDrie,
+.pakketVier{
+    width: 643px;
+    height: 380px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productTitle{
+    color: white;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.productZin{
+    color: white;
+    font-family: Arial;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.voordeel{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.pakketVoordelen{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.productOrder{
+    border: none;
+    background-color: white;
+    font-family: Oswald;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.orderBtn{
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.orderBtn:hover{
+    transform: scale(1.1);
+}
+
