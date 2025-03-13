@@ -7,11 +7,28 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="contact.php">Contact</a>
-    </nav>
+<div class="navBackground">
+        <div class="logo">
+            <img src="../images/logo.svg" alt="Logo Kras Hosting" class="logoImg">
+        </div>
+        <nav class="navBar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.php">Contact</a>
+            <button class="searchBtn"><img src="../images/search.svg" alt="Search" class="search"></button>
+        </nav>
+    </div>
+    <div class="header">
+        <div class="headerContent">
+            <div class="service">
+                HOSTING SERVICES
+            </div>
+            <div class="name">
+                <h1 class="whiteName">KRAS</h1>
+                <h1 class="orangeName">HOSTING</h1>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
