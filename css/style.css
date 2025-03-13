@@ -24,6 +24,7 @@ body{
 
 .navLoginBackground{
     padding-bottom: 60px;
+    margin-bottom: 100px;
 }
 
 .logo{
@@ -126,6 +127,7 @@ a:hover{
 p{
     font-family: Arial;
     color: #8C8C8C;
+    font-size: 20px;
 }
 
 .pakketTxt{
@@ -198,6 +200,8 @@ p{
     margin-bottom: 100px;
 }
 
+#username,
+#password,
 #name,
 #email,
 #subject{
@@ -206,15 +210,19 @@ p{
     width: 500px;
     padding-left: 10px;
     padding-bottom: 5px;
+    font-size: 20px;
+    font-family: Arial;
 }
 
+#username:focus,
+#password:focus,
 #message:focus,
 #name:focus,
 #email:focus,
 #subject:focus{
     outline: none;
     font-family: Arial;
-    font-family: 15px;
+    font-size: 20px;
 }
 
 #message{
@@ -225,7 +233,7 @@ p{
     padding-left: 10px;
     padding-top: 5px;
     font-family: Arial;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #submit{
@@ -237,6 +245,12 @@ p{
     font-family: Oswald;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#submit:hover{
+    transform: scale(1.1);
 }
 
 .form{
@@ -344,3 +358,15 @@ p{
     transform: scale(1.1);
 }
 
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.loginFormContainer{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: -100px auto 0;
+}

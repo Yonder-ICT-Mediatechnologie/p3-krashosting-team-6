@@ -19,5 +19,21 @@
             <button class="searchBtn"><img src="../images/search.svg" alt="Search" class="search"></button>
         </nav>
     </div>
+
+    <div id="bodyContainer">
+        <div class="pakketContent">
+            <div class="pakketTxt">
+                <h1 class="title">Login</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="loginFormContainer">
+        <form action="" class="loginForm">
+            <input type="text" name="username" id="username" placeholder="Gebruikersnaam">
+            <input type="password" name="password" id="password" placeholder="Wachtwoord">
+            <input type="submit" name="versturen" id="submit" value="Inloggen">
+        </form>
+    </div>
 </body>
 </html>
