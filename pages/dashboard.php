@@ -30,5 +30,13 @@
             </div>
         </div>
     </div>
+
+    <div id="bodyContainer">
+        <div class="pakketContent">
+            <div class="pakketTxt">
+                <h1 class="title">Dashboard</h1>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
