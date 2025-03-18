@@ -489,3 +489,50 @@ ul{
 #colOne{
     font-weight: bold;
 }
+
+.newsTableContainer{
+    margin-top: -160px;
+    margin-bottom: 100px;
+}
+
+.newsTable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-family: Arial;
+}
+
+.newsHead{
+    background-color: #F34F3A;
+    color: white;
+    height: 70px;
+}
+
+.newsHeadCell{
+    padding: 10px;
+    text-align: left;
+    min-width: 190px;
+    border: 1px solid black;
+}
+
+.newsRowCell{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#deleteNews{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.deleteImg{
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+.deleteImg:hover{
+    transform: scale(1.1);
+}

@@ -1,10 +1,14 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
     exit;
 }
+require 'db.php';
+
+// Nieuws ophalen
+$stmt = $pdo->query("SELECT * FROM nieuws ORDER BY datum DESC");
+$nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +53,36 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         </div>
     </div>
 
+    <div class="newsTableContainer">
+            <table class="newsTable">
+                <thead class="newsHead">
+                    <tr class="newsRow">
+                        <th class="newsHeadCell">Titel</th>
+                        <th class="newsHeadCell">Bericht</th>
+                        <th class="newsHeadCell">Datum</th>
+                        <th class="newsHeadCell">Bewerken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (count($nieuws) > 0): ?>
+                        <?php foreach ($nieuws as $bericht): ?>
+                            <tr class="newsRow">
+                                <td class="newsRowCell"><?= htmlspecialchars($bericht['titel']) ?></td>
+                                <td class="newsRowCell"><?= htmlspecialchars($bericht['content']) ?></td>
+                                <td class="newsRowCell"><?= htmlspecialchars($bericht['datum']) ?></td>
+                                <td class="newsRowCell" id="deleteNews">
+                                    <a href="editNews.php?id=<?= $bericht['id'] ?>"><img src="../images/bewerkNews.svg" alt="" class="deleteImg"></a> <br><br><br><br>
+                                    <a href="deleteNews.php?id=<?= $bericht['id'] ?>" onclick="return confirm('Weet je zeker dat je dit bericht wilt verwijderen?');"><img src="../images/deleteNews.svg" alt="" class="deleteImg"></a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr><td colspan="4" style="text-align:center;">Geen nieuwsberichten gevonden.</td></tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    
     <footer class="footer">
         <div class="footerContainer">
             <div class="footerLogo">
