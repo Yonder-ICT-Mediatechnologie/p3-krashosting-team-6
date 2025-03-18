@@ -376,24 +376,24 @@ p{
     position: relative;
     color: white;
     overflow: hidden;
-  }
+}
    
-  .footerWave {
+.footerWave {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-  }
+}
    
-  .footerWave svg {
+.footerWave svg {
     display: block;
     width: 100%;
     height: 80px;
-  }
+}
    
-  .footerContainer {
+.footerContainer {
     padding: 60px 100px 40px;
     display: flex;
     flex-direction: column;
@@ -403,9 +403,89 @@ p{
     position: relative;
     z-index: 1;
     color: white;
-  }
+}
    
-  .footerInfo {
+.footerInfo {
     font-size: 16px;
     color: white;
-  }
+}
+
+.check{
+    width: 20px;
+}
+
+.voordelen{
+    margin: 20px 50px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.voordeelPakket{
+    display: flex;
+    gap: 10px;
+}
+
+.orderPakketBtn{
+    width: 150px;
+    height: 50px;
+    background-color: #653398;
+    color: white;
+    border: none;
+    font-family: Oswald;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 50px;
+}
+
+.orderPakketBtn:hover{
+    transform: scale(1.1);
+}
+
+ul{
+    color: #8C8C8C;
+    font-family: Arial;
+    font-size: 20px;
+    margin-left: 70px;
+    list-style-image: url("../images/ulDot.svg");
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 50px;
+}
+
+.dataTable{
+    margin-top: -160px;
+    margin-bottom: 100px;
+    width: 80%;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableHeader{
+    background-color: #F34F3A;
+    color: white;
+    height: 50px;
+}
+
+.tableRow{
+    height: 50px;
+    font-size: 20px;
+}
+
+.tableCell{
+    border: 1px solid black;
+}
+
+.tableHeaderCell{
+    border: 1px solid black;
+}
+
+#colOne{
+    font-weight: bold;
+}
