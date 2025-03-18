@@ -368,7 +368,7 @@ p{
     display: flex;
     width: fit-content;
     height: fit-content;
-    margin: -100px auto 0;
+    margin: -100px auto 100px;
 }
 
 .footer {
