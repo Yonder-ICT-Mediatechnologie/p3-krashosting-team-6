@@ -65,5 +65,17 @@
             <p class="contactUs"><img src="../images/klantenservice.svg" alt="Klantenservice" class="contactImg">van maandag t/m vrijdag, van 9:00 tot 17:00</p>
         </div>
     </div>
+
+    <footer class="footer">
+
+        <div class="footerContainer">
+        <div class="footerLogo">
+            <img src="../images/logo.svg" alt="Logo" class="logoImg">
+        </div>
+        
+            <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
+        </div>
+
+    </footer> 
 </body>
 </html>

@@ -35,5 +35,17 @@
             <input type="submit" name="versturen" id="submit" value="Inloggen">
         </form>
     </div>
+
+    <footer class="footer">
+
+        <div class="footerContainer">
+        <div class="footerLogo">
+            <img src="../images/logo.svg" alt="Logo" class="logoImg">
+        </div>
+        
+            <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
+        </div>
+
+    </footer> 
 </body>
 </html>
