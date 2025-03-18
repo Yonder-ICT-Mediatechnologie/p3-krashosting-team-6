@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+$valid_username = "admin";
+$valid_password = "wachtwoord123";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    if ($username === $valid_username && $password === $valid_password) {
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+        header("Location: dashboard.php");
+        exit;
+    } else {
+        $error = "Ongeldige gebruikersnaam of wachtwoord.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,23 +51,23 @@
     </div>
 
     <div class="loginFormContainer">
-        <form action="" class="loginForm">
-            <input type="text" name="username" id="username" placeholder="Gebruikersnaam">
-            <input type="password" name="password" id="password" placeholder="Wachtwoord">
+        <form action="" method="POST" class="loginForm">
+            <?php if (!empty($error)): ?>
+                <p style="color: red; text-align: center;"><?php echo $error; ?></p>
+            <?php endif; ?>
+            <input type="text" name="username" id="username" placeholder="Gebruikersnaam" required>
+            <input type="password" name="password" id="password" placeholder="Wachtwoord" required>
             <input type="submit" name="versturen" id="submit" value="Inloggen">
         </form>
     </div>
 
     <footer class="footer">
-
         <div class="footerContainer">
-        <div class="footerLogo">
-            <img src="../images/logo.svg" alt="Logo" class="logoImg">
-        </div>
-        
+            <div class="footerLogo">
+                <img src="../images/logo.svg" alt="Logo" class="logoImg">
+            </div>
             <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
         </div>
-
-    </footer> 
+    </footer>
 </body>
 </html>
