@@ -480,6 +480,7 @@ ul{
 
 .tableCell{
     border: 1px solid black;
+    width: 316px;
 }
 
 .tableHeaderCell{
@@ -605,4 +606,9 @@ ul{
 .addNewsBtn:hover{
     text-decoration: none;
     transform: scale(1.1);
+}
+
+.view{
+    color: black;
+    font-size: 20px;
 }
