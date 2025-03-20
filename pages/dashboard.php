@@ -6,7 +6,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 require 'db.php';
 
-// Nieuws ophalen
 $stmt = $pdo->query("SELECT * FROM nieuws ORDER BY datum DESC");
 $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
