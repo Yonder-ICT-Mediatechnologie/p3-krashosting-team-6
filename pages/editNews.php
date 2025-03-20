@@ -42,6 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
 </head>
 <body>
+    <div class="newsHeader">
+        <div class="newsLogo">
+            <img src="../images/logo.svg" alt="" class="logo">
+            <h1>Admin</h1>
+        </div>
+        <a href="logout.php">Logout</a>
+    </div>
+
     <div class="editContainer">
     <h1 class="title">Bericht bewerken</h1>
         <form action="" method="post" class="editForm">
@@ -55,5 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="dashboard.php"><button type="button" class="editBtn">Annuleren</button></a>
         </form>
     </div>
+
+    <footer class="footer">
+        <div class="footerContainer">
+            <div class="footerLogo">
+                <img src="../images/logo.svg" alt="Logo" class="logoImg">
+            </div>
+            <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

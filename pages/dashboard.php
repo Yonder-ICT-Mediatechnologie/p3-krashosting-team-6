@@ -20,33 +20,17 @@ $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <div class="navBackground">
-        <div class="logo">
-            <img src="../images/logo.svg" alt="Logo Kras Hosting" class="logoImg">
+    <div class="newsHeader">
+        <div class="newsLogo">
+            <img src="../images/logo.svg" alt="" class="logo">
+            <h1>Admin</h1>
         </div>
-        <nav class="navBar">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="contact.php">Contact</a>
-            <a href="logout.php">Logout</a>
-            <button class="searchBtn"><img src="../images/search.svg" alt="Search" class="search"></button>
-        </nav>
-    </div>
-
-    <div class="header">
-        <div class="headerContent">
-            <div class="service">HOSTING SERVICES</div>
-            <div class="name">
-                <h1 class="whiteName">KRAS</h1>
-                <h1 class="orangeName">HOSTING</h1>
-            </div>
-        </div>
+        <a href="logout.php">Logout</a>
     </div>
 
     <div id="bodyContainer">
-            <div class="pakketTxt" style="display: flex; gap: 889px;">
-                <h1 class="title">Dashboard</h1>
+            <div class="pakketTxt" style="display: flex; gap: 925px; align-items: center;">
+                <h1 class="title" style="margin-bottom: 0;">Dashboard</h1>
                 <a href="addNews.php" class="addNewsBtn">+ Bericht toevoegen</a>
             </div>
     </div>
