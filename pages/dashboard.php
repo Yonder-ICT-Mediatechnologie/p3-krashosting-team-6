@@ -46,11 +46,10 @@ $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="bodyContainer">
-        <div class="pakketContent">
-            <div class="pakketTxt">
+            <div class="pakketTxt" style="display: flex; gap: 889px;">
                 <h1 class="title">Dashboard</h1>
+                <a href="addNews.php" class="addNewsBtn">+ Bericht toevoegen</a>
             </div>
-        </div>
     </div>
 
     <div class="newsTableContainer">
@@ -72,7 +71,7 @@ $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td class="newsRowCell"><?= htmlspecialchars($bericht['datum']) ?></td>
                                 <td class="newsRowCell" id="deleteNews">
                                     <a href="editNews.php?id=<?= $bericht['id'] ?>"><img src="../images/bewerkNews.svg" alt="" class="deleteImg"></a> <br><br><br><br>
-                                    <a href="deleteNews.php?id=<?= $bericht['id'] ?>" onclick="return confirm('Weet je zeker dat je dit bericht wilt verwijderen?');"><img src="../images/deleteNews.svg" alt="" class="deleteImg"></a>
+                                    <a href="deleteNews.php?id=<?= $bericht['id'] ?>" onclick="return confirm('Weet u zeker dat u dit bericht wilt verwijderen?');"><img src="../images/deleteNews.svg" alt="" class="deleteImg"></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
