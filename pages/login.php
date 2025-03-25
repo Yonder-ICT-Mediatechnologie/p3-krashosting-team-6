@@ -34,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="../images/logo.svg" alt="Logo Kras Hosting" class="logoImg">
         </div>
         <nav class="navBar">
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="about.html">About</a>
-            <a href="products.html">Products</a>
+            <a href="products.php">Products</a>
             <a href="contact.php">Contact</a>
             <button class="searchBtn"><img src="../images/search.svg" alt="Search" class="search"></button>
         </nav>
