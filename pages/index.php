@@ -1,3 +1,20 @@
+<?php
+require 'db.php';
+
+$stmt = $pdo->prepare("SELECT * FROM nieuws WHERE datum >= CURDATE() - INTERVAL 1 DAY ORDER BY datum DESC");
+$stmt->execute();
+$nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$todayNews = [];
+$yesterdayNews = [];
+foreach ($nieuws as $bericht) {
+    if ($bericht['datum'] == date('Y-m-d')) {
+        $todayNews[] = $bericht;
+    } elseif ($bericht['datum'] == date('Y-m-d', strtotime('-1 day'))) {
+        $yesterdayNews[] = $bericht;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +25,6 @@
     <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
 </head>
 <body>
-
     <div class="navBackground">
         <div class="logo">
             <img src="../images/logo.svg" alt="Logo Kras Hosting" class="logoImg">
@@ -24,9 +40,7 @@
 
     <div class="header">
         <div class="headerContent">
-            <div class="service">
-                HOSTING SERVICES
-            </div>
+            <div class="service">HOSTING SERVICES</div>
             <div class="name">
                 <h1 class="whiteName">KRAS</h1>
                 <h1 class="orangeName">HOSTING</h1>
@@ -38,9 +52,8 @@
         <div class="pakketContent">
             <div class="pakketTxt">
                 <h1 class="title">Onze pakketten</h1>
-                <p class="pakketTekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non euismod nisl. Nullam tincidunt, nulla vitae tincidunt dictum</p>
+                <p class="pakketTekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-
             <div id="pakketContainer">
                 <a href="detailpaginaEasy.html" class="pakketLink">
                     <div class="pakketEasy">
@@ -49,7 +62,6 @@
                         <p class="pakketName">Easy</p>
                     </div>
                 </a>
-
                 <a href="detailpaginaFunctionals.html" class="pakketLink">
                     <div class="pakketFunctionals">
                         <img src="../images/flowerBlue.svg" alt="flower" class="flower">
@@ -57,7 +69,6 @@
                         <p class="pakketName">Functionals</p>
                     </div>
                 </a>
-
                 <a href="detailpaginaPro.html" class="pakketLink">
                     <div class="pakketPro">
                         <img src="../images/flowerGreen.svg" alt="flower" class="flower">
@@ -65,7 +76,6 @@
                         <p class="pakketName">Pro</p>
                     </div>
                 </a>
-
                 <a href="detailpaginaHeavy.html" class="pakketLink">
                     <div class="pakketHeavy">
                         <img src="../images/flowerRed.svg" alt="flower" class="flower">
@@ -75,30 +85,37 @@
                 </a>
             </div>
         </div>
-
         <div class="newsHome">
             <div class="today">
                 <h1 class="title">Vandaag</h1>
-                <p class="newsTxt">Fijne dag vandaag!</p>
+                <?php if (!empty($todayNews)): ?>
+                    <?php foreach ($todayNews as $bericht): ?>
+                        <p class="newsTxt"><strong><?= htmlspecialchars($bericht['titel']) ?></strong>: <?= htmlspecialchars($bericht['content']) ?></p>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p class="newsTxt">Geen nieuws voor vandaag.</p>
+                <?php endif; ?>
             </div>
-
             <div class="yesterday">
                 <h1 class="title">Gisteren</h1>
-                <p class="newsTxt">Fijne dag vandaag!</p>
+                <?php if (!empty($yesterdayNews)): ?>
+                    <?php foreach ($yesterdayNews as $bericht): ?>
+                        <p class="newsTxt"><strong><?= htmlspecialchars($bericht['titel']) ?></strong>: <?= htmlspecialchars($bericht['content']) ?></p>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p class="newsTxt">Geen nieuws van gisteren.</p>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-
         <div class="footerContainer">
-          <div class="footerLogo">
-            <img src="../images/logo.svg" alt="Logo" class="logoImg">
-          </div>
-         
+            <div class="footerLogo">
+                <img src="../images/logo.svg" alt="Logo" class="logoImg">
+            </div>
             <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
         </div>
-
-    </footer> 
+    </footer>
 </body>
 </html>
