@@ -90,7 +90,7 @@ foreach ($nieuws as $bericht) {
                 <h1 class="title">Vandaag</h1>
                 <?php if (!empty($todayNews)): ?>
                     <?php foreach ($todayNews as $bericht): ?>
-                        <p class="newsTxt"><strong><?= htmlspecialchars($bericht['titel']) ?></strong>: <?= htmlspecialchars($bericht['content']) ?></p>
+                        <p class="newsTxt"><strong><?= htmlspecialchars($bericht['titel']) ?></strong>: <br> <?= htmlspecialchars($bericht['content']) ?></p>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <p class="newsTxt">Geen nieuws voor vandaag.</p>

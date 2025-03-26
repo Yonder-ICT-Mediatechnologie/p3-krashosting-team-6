@@ -634,3 +634,18 @@ ul{
     gap: 10px;
     color: white;
 }
+
+#pakketOmschr{
+    border: 3px solid #F34F3A;
+    margin: 20px 0;
+    resize: none;
+    width: 40%;
+    height: 100px;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#pakketOmschr:focus{
+    outline: unset;
+}
