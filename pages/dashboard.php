@@ -100,6 +100,13 @@ $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </tbody>
                 </table>
             </div>
+
+    <div id="bodyContainer">
+        <div class="pakketTxt" style="display: flex; gap: 925px; align-items: center;">
+            <h1 class="title">Bestellingen</h1>
+            <a href="bestellingen.php" class="addNewsBtn">Alle bestellingen</a>
+        </div>
+    </div>
     
     <footer class="footer">
         <div class="footerContainer">
