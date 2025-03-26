@@ -635,3 +635,40 @@ ul{
 #pakketOmschr:focus{
     outline: unset;
 }
+
+.orderBtn{
+    width: fit-content;
+    background-color: #F34F3A;
+    border: unset;
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    height: 50px;
+    padding: 0 20px;
+}
+
+#ordered{
+    width: 50%;
+    text-align: center;
+    margin: 150px auto;
+}
+
+.bedanktTitle{
+    font-size: 50px;
+    color: #F34F3A;
+    margin: 30px 0;
+}
+
+.bedanktLogo{
+    width: 200px;
+}
+
+.bedanktZin{
+    color: white;
+    margin: 0 0 30px;
+}
+
+.backHome{
+    color: white;
+}

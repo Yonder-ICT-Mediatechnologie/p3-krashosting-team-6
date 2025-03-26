@@ -69,7 +69,7 @@
                     <?php endif; ?>
                 </div>
 
-                <a href="" class="orderPakket">
+                <a href="bestelling.php?id=<?= $pakket['id'] ?>" class="orderPakket">
                     <button class="orderPakketBtn">Bestel nu</button>
                 </a>
 
