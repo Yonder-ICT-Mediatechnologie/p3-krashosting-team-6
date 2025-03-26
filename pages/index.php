@@ -1,6 +1,11 @@
 <?php
 require 'db.php';
 
+// Haal pakketten op uit de database
+$stmt = $pdo->query("SELECT * FROM pakketten");
+$pakketten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Haal nieuws op uit de database
 $stmt = $pdo->prepare("SELECT * FROM nieuws WHERE datum >= CURDATE() - INTERVAL 1 DAY ORDER BY datum DESC");
 $stmt->execute();
 $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -14,7 +19,13 @@ foreach ($nieuws as $bericht) {
         $yesterdayNews[] = $bericht;
     }
 }
+
+// Kleuren en bloemen arrays
+$colors = ['#9C65D5', '#60B4D4', '#5BCA54', '#ED5E4B'];
+$flowers = ['flowerPurple', 'flowerBlue', 'flowerGreen', 'flowerRed'];
+$colorCount = count($colors);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,36 +66,21 @@ foreach ($nieuws as $bericht) {
                 <p class="pakketTekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div id="pakketContainer">
-                <a href="detailpaginaEasy.html" class="pakketLink">
-                    <div class="pakketEasy">
-                        <img src="../images/flowerPurple.svg" alt="flower" class="flower">
-                        <h3 class="pakketTitle">Pakket 1</h3>
-                        <p class="pakketName">Easy</p>
-                    </div>
-                </a>
-                <a href="detailpaginaFunctionals.html" class="pakketLink">
-                    <div class="pakketFunctionals">
-                        <img src="../images/flowerBlue.svg" alt="flower" class="flower">
-                        <h3 class="pakketTitle">Pakket 2</h3>
-                        <p class="pakketName">Functionals</p>
-                    </div>
-                </a>
-                <a href="detailpaginaPro.html" class="pakketLink">
-                    <div class="pakketPro">
-                        <img src="../images/flowerGreen.svg" alt="flower" class="flower">
-                        <h3 class="pakketTitle">Pakket 3</h3>
-                        <p class="pakketName">Pro</p>
-                    </div>
-                </a>
-                <a href="detailpaginaHeavy.html" class="pakketLink">
-                    <div class="pakketHeavy">
-                        <img src="../images/flowerRed.svg" alt="flower" class="flower">
-                        <h3 class="pakketTitle">Pakket 4</h3>
-                        <p class="pakketName">Heavy User</p>
-                    </div>
-                </a>
+                <?php foreach ($pakketten as $index => $pakket): 
+                    $color = $colors[$index % $colorCount];
+                    $flower = $flowers[$index % $colorCount];
+                ?>
+                    <a href="detailpagina.php?id=<?= $pakket['id'] ?>" class="pakketLink">
+                        <div class="pakketBox" style="background-color: <?= $color ?>;">
+                            <img src="../images/<?= $flower ?>.svg" alt="flower" class="flower">
+                            <h3 class="pakketTitle">Pakket <?= $pakket['id'] ?></h3>
+                            <p class="pakketName"><?= htmlspecialchars($pakket['naam']) ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
+
         <div class="newsHome">
             <div class="today">
                 <h1 class="title">Vandaag</h1>

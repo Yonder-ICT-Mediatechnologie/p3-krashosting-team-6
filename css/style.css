@@ -154,24 +154,10 @@ p{
     gap: 10px;
 }
 
-.pakketEen,
-.pakketEasy{
-    background-color: #9C65D5;
-}
-
-.pakketTwee,
-.pakketFunctionals{
-    background-color: #60B4D4;
-}
-
-.pakketDrie,
-.pakketPro{
-    background-color: #5BCA54;
-}
-
-.pakketVier,
-.pakketHeavy{
-    background-color: #ED5E4B;
+.pakketBox{
+    padding: 40px;
+    width: 324px;
+    height: 200px;
 }
 
 .flower{
