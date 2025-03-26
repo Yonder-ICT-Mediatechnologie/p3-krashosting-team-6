@@ -33,7 +33,7 @@ $bestellingen = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div id="bodyContainer">
-        <div class="pakketTxt" style="display: flex; gap: 975px; align-items: center;">
+        <div class="pakketTxt" style="display: flex; gap: 922px; align-items: center;">
             <h1 class="title">Alle Bestellingen</h1>
             <a href="dashboard.php" class="addNewsBtn">⬅ Terug</a>
         </div>
@@ -65,5 +65,14 @@ $bestellingen = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+
+    <footer class="footer">
+        <div class="footerContainer">
+            <div class="footerLogo">
+                <img src="../images/logo.svg" alt="Logo" class="logoImg">
+            </div>
+            <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
