@@ -1,6 +1,11 @@
 <?php
     require 'db.php';
 
+    if (!isset($_GET['id']) || empty($_GET['id'])) {
+        echo "Geen pakket-id meegegeven.";
+        exit;
+    }
+
     $id = $_GET['id'];
 
     $stmt = $pdo->prepare("SELECT * FROM pakketten WHERE id = :id");
@@ -12,25 +17,7 @@
     } else {
         echo "Pakket niet gevonden.";
         exit;
-    }
-
-    // Haal alle pakketten op voor de vergelijkings tabel
-    $stmt = $pdo->query("SELECT * FROM pakketten");
-    $pakketten = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Functie om de voordelen om te zetten naar een array
-    function getVoordelenArray($voordelen) {
-        return explode(",", $voordelen);
-    }
-
-    // Vergelijk de voordelen van alle pakketten
-    $voordelenLijsten = [];
-    foreach ($pakketten as $pakket) {
-        $voordelenLijsten[] = getVoordelenArray($pakket['voordelen']);
-    }
-
-    // Bepaal het maximale aantal voordelen
-    $maxVoordelen = max(array_map('count', $voordelenLijsten)); 
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,12 +82,26 @@
                     <li>Lorem ipsum dolor sit amet - Lorem ipsum dolor sit amet</li>
                 </ul>
 
-
                 <h1 class="title">Vergelijk onze pakketten</h1>
-
             </div>
         </div>
         </div>
+
+        <?php
+            $stmt = $pdo->query("SELECT * FROM pakketten");
+            $pakketten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            function getVoordelenArray($voordelen) {
+                return explode(",", $voordelen);
+            }
+        
+            $voordelenLijsten = [];
+            foreach ($pakketten as $pakket) {
+                $voordelenLijsten[] = getVoordelenArray($pakket['voordelen']);
+            }
+        
+            $maxVoordelen = max(array_map('count', $voordelenLijsten));
+        ?>
 
         <table class="dataTable">
             <thead class="tableHeader">

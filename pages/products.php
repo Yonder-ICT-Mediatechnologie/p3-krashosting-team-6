@@ -1,3 +1,11 @@
+<?php
+session_start();
+require 'db.php';
+
+$stmt = $pdo->query("SELECT * FROM pakketten");
+$pakketten = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,106 +49,46 @@
     </div>
 
     <div class="pakketten">
-        <div class="pakketEen">
-            <div class="productTitle">
-                <img src="../images/flowerPurple.svg" alt="flower" class="productFlower">
-                Pakket 1 - Easy
+        <?php 
+        $colors = ['#9C65D5', '#60B4D4', '#5BCA54', '#ED5E4B'];
+        $flowers = ['flowerPurple', 'flowerBlue', 'flowerGreen', 'flowerRed'];
+        $colorCount = count($colors);
+        
+        foreach ($pakketten as $index => $pakket): 
+            $color = $colors[$index % $colorCount]; 
+            $flower = $flowers[$index % $colorCount];
+        ?>
+            <div class="pakketEen" style="background-color: <?= $color ?>;">
+                <div class="productTitle">
+                    <img src="../images/<?= $flower ?>.svg" alt="flower" class="productFlower">
+                    Pakket <?= $pakket['id'] ?> - <?= htmlspecialchars($pakket['naam']) ?>
+                </div>
+                <div class="productZin">Lorem ipsum dolor sit amet</div>
+                <div class="pakketVoordelen">
+                    <div class="voordeel">
+                        <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
+                    </div>
+                    <div class="voordeel">
+                        <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
+                    </div>
+                    <div class="voordeel">
+                        <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+                <a href="detailpagina.php?id=<?= $pakket['id'] ?>" class="orderBtn">
+                    <button class="productOrder">Bekijken</button>
+                </a>
             </div>
-            <div class="productZin">Lorem ipsum dolor sit amet</div>
-            <div class="pakketVoordelen">
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-            </div>
-            <a href="detailpaginaEasy.html" class="orderBtn">
-                <button class="productOrder">Bekijken</button>
-            </a>
-        </div>
-
-        <div class="pakketTwee">
-            <div class="productTitle">
-                <img src="../images/flowerBlue.svg" alt="flower" class="productFlower">
-                Pakket 2 - Functionals
-            </div>
-            <div class="productZin">Lorem ipsum dolor sit amet</div>
-            <div class="pakketVoordelen">
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-            </div>
-            <a href="detailpaginaFunctionals.html" class="orderBtn">
-                <button class="productOrder">Bekijken</button>
-            </a>
-        </div>
-
-        <div class="pakketDrie">
-            <div class="productTitle">
-                <img src="../images/flowerGreen.svg" alt="flower" class="productFlower">
-                Pakket 3 - Pro
-            </div>
-            <div class="productZin">Lorem ipsum dolor sit amet</div>
-            <div class="pakketVoordelen">
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-            </div>
-            <a href="detailpaginaPro.html" class="orderBtn">
-                <button class="productOrder">Bekijken</button>
-            </a>
-        </div>
-
-        <div class="pakketVier">
-            <div class="productTitle">
-                <img src="../images/flowerRed.svg" alt="flower" class="productFlower">
-                Pakket 4 - Heavy User
-            </div>
-            <div class="productZin">Lorem ipsum dolor sit amet</div>
-            <div class="pakketVoordelen">
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-                <div class="voordeel">
-                    <img src="../images/check.svg" alt="Check" class="check">Lorem ipsum dolor sit amet
-                </div>
-            </div>
-            <a href="detailpaginaHeavy.html" class="orderBtn">
-                <button class="productOrder">Bekijken</button>
-            </a>
-        </div>
-
+        <?php endforeach; ?>
     </div>
 
     <footer class="footer">
-
         <div class="footerContainer">
-          <div class="footerLogo">
-            <img src="../images/logo.svg" alt="Logo" class="logoImg">
-          </div>
-         
+            <div class="footerLogo">
+                <img src="../images/logo.svg" alt="Logo" class="logoImg">
+            </div>
             <p class="footerInfo">© 2025 KRAS HOSTING. All rights reserved.</p>
         </div>
-
-    </footer> 
+    </footer>
 </body>
 </html>
