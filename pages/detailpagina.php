@@ -57,7 +57,7 @@
     <div id="bodyContainer">
         <div class="pakketContent">
             <div class="pakketTxt">
-                <h1 class="title">Pakket <?= $pakket['id'] ?> - <?= htmlspecialchars($pakket['naam']) ?></h1>
+                <h1 class="title">Pakket <?= $pakket['id'] ?> - <?= htmlspecialchars($pakket['naam']) ?> - €<?= $pakket['prijs'] ?></h1>
                 <p class="pakketTekst">Dit zijn de voordelen van dit pakket:</p>
                 <div class="voordelen">
                     <?php if (isset($voordelen)): ?>
