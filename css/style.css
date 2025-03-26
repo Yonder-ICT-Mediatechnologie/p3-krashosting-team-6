@@ -343,6 +343,7 @@ p{
     cursor: pointer;
 }
 
+.placeOrderBtn:hover,
 .orderBtn:hover{
     transform: scale(1.1);
 }
@@ -637,7 +638,7 @@ ul{
     outline: unset;
 }
 
-.orderBtn{
+.placeOrderBtn{
     width: fit-content;
     background-color: #F34F3A;
     border: unset;
@@ -647,6 +648,8 @@ ul{
     color: white;
     height: 50px;
     padding: 0 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 #ordered{

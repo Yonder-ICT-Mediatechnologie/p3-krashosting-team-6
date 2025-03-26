@@ -50,7 +50,7 @@ if (!$pakket) {
         <br>
         <input type="tel" name="telefoon" id="titel" placeholder="Telefoon" required>
         <br><br>
-        <button type="submit" class="orderBtn">Bestelling plaatsen</button>
+        <button type="submit" class="placeOrderBtn">Bestelling plaatsen</button>
     </form>
     </div>
 </body>

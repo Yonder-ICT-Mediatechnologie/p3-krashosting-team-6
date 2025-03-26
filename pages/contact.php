@@ -48,7 +48,7 @@
     <div id="contactContainer">
         <div class="contactForm">
             <h1 class="title">Contactformulier</h1>
-            <form action="" class="form">
+            <form action="" class="form" method="POST">
                 <input type="text" name="name" id="name" placeholder="Naam">
                 <input type="email" name="email" id="email" placeholder="E-mailadres">
                 <input type="text" name="subject" id="subject" placeholder="Onderwerp">
