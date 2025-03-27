@@ -59,8 +59,8 @@ $bestellingen = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td class="newsRowCell"><?= htmlspecialchars($bestelling['telefoon']) ?></td>
                         <td class="newsRowCell"><?= htmlspecialchars($bestelling['pakket_naam']) ?></td>
                         <td class="newsRowCell">€<?= number_format($bestelling['prijs'], 2) ?></td>
-                        <td class="newsRowCell"><?= htmlspecialchars($bestelling['besteld_op']) ?></td>
-                    </tr>
+                        <td class="newsRowCell"><?= date('d-m-Y', strtotime($bestelling['besteld_op'])) ?><br><?= date('H:i', strtotime($bestelling['besteld_op'])) ?> uur</td>
+                        </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

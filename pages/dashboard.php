@@ -51,7 +51,7 @@ $nieuws = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <tr class="newsRow">
                                 <td class="newsRowCell"><?= htmlspecialchars($bericht['titel']) ?></td>
                                 <td class="newsRowCell"><?= htmlspecialchars($bericht['content']) ?></td>
-                                <td class="newsRowCell"><?= htmlspecialchars($bericht['datum']) ?></td>
+                                <td class="newsRowCell"><?= date('d-m-Y', strtotime($bericht['datum'])) ?></td>
                                 <td class="newsRowCell" id="deleteNews">
                                     <a href="editNews.php?id=<?= $bericht['id'] ?>"><img src="../images/bewerkNews.svg" alt="" class="deleteImg"></a> <br><br><br><br>
                                     <a href="deleteNews.php?id=<?= $bericht['id'] ?>" onclick="return confirm('Weet u zeker dat u dit bericht wilt verwijderen?');"><img src="../images/deleteNews.svg" alt="" class="deleteImg"></a>
